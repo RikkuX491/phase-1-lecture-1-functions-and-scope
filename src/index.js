@@ -39,9 +39,9 @@ const foodImageLinks = [
 /*
  * Declaring JS functions: This is an example of a function declaration containing the lines of code to be executed when the function is invoked.
  */
-function updateFoodImageLink(imageNumber){
-    const image = document.getElementById(`image-${imageNumber}`)
-    image.src = foodImageLinks[imageNumber - 1]
+function updateFoodImageLink(index){
+    const image = document.getElementById(`image-${index + 1}`)
+    image.src = foodImageLinks[index]
 }
 /*
  * Function Scope: The "image" variable declared within the "updateFoodImageLink" function has Function Scope.
@@ -60,19 +60,19 @@ function updateFoodImageLink(imageNumber){
 // updateFoodImageLink(9)
 // updateFoodImageLink(10)
 
-for(let imageNumber = 1; imageNumber <= 10; imageNumber++){
+for(let index = 0; index < foodImageLinks.length; index++){
     /*
      * Invoking JS functions: This is an example of invoking a function.
-     *                        In this example, the "updateFoodImageLink" function is invoked with an argument of "imageNumber" (a variable containing an integer value).
+     *                        In this example, the "updateFoodImageLink" function is invoked with an argument of "index" (a variable containing an integer value).
      *                        The code inside of the "updateFoodImageLink" function declaration will execute.
      */
-    updateFoodImageLink(imageNumber)
+    updateFoodImageLink(index)
 }
 /*
- * Block Scope: The "imageNumber" variable declared within the for loop has Block Scope.
- *              Attempting to access the "imageNumber" variable from outside of the for loop where it was declared will result in an uncaught ReferenceError which will state that "imageNumber" is not defined.
+ * Block Scope: The "index" variable declared within the for loop has Block Scope.
+ *              Attempting to access the "index" variable from outside of the for loop where it was declared will result in an uncaught ReferenceError which will state that "index" is not defined.
  */
-//console.log(imageNumber)
+//console.log(index)
 
 /*
  * Callback Functions: "prepareAndCookBurgerMeat" and "addIngredientsToBurger" are callback functions since they are functions that are passed as arguments into the "makeBurger" function.
