@@ -33,10 +33,27 @@ function getRandomNumber(){
 //     addSumStringToPage(getRandomNumber(), getRandomNumber())
 // }
 
+function addFoodImageToMenu(foodLink){
+    const imgElement = document.createElement('img')
+    imgElement.src = foodLink
+    restaurantMenu.appendChild(imgElement)
+}
+
 const restaurantMenu = document.getElementById('restaurant-menu')
 
 for(let index = 0; index < foodImageLinks.length; index++){
-    const imgElement = document.createElement('img')
-    imgElement.src = foodImageLinks[index]
-    restaurantMenu.appendChild(imgElement)
+    addFoodImageToMenu(foodImageLinks[index])
 }
+
+// function sum(num1, num2){
+//     return num1 + num2
+// }
+
+function average(sum, num1, num2){
+    return sum(num1, num2) / 2
+}
+
+const avg = average((num1, num2) => {
+    return num1 + num2
+}, 4, 5)
+console.log(`The average is ${avg}`)
